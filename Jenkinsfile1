@@ -24,11 +24,5 @@ stage('Build') {
            bat 'dotnet publish  --configuration Release'
       }
    }
-       stage('deploy') {
-        steps {
-        azureWebAppPublish azureCredentialsId: params.azure_cred_id,
-            resourceGroup: "rg-MyWebApp", appName: "HarmanWebPage", sourceDirectory: "bin/Release/netcoreapp2.2/publish/"
-        }
-    }
  }
 }
